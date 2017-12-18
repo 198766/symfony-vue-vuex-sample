@@ -4,7 +4,7 @@ namespace ApiBundle\Service;
 
 class RandomGenerator
 {
-    const COUNT = 2000;
+    const COUNT = 20000;
 
     public function generate()
     {

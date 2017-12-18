@@ -10,17 +10,17 @@
 </template>
 
 <script>
-import DepositStationNavigation from './components/DepositStationNavigation.vue'
-import DepositStationList from './components/DepositStationList.vue'
+import DepositStationNavigation from './components/DepositStationNavigation.vue';
+import DepositStationList from './components/DepositStationList.vue';
 
 export default {
   name: 'app',
   components: { DepositStationNavigation, DepositStationList },
   created() {
-      this.$store.dispatch('updateStorage');
-      this.$store.dispatch('initActiveTab');
+    this.$store.dispatch('updateStorage');
+    this.$store.dispatch('initActiveTab');
   }
-}
+};
 </script>
 
 <style src="./assets/style.css"></style>

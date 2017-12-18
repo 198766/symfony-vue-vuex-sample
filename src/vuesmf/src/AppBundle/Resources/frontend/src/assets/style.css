@@ -17,9 +17,7 @@ body, html {
 .content__right{
   display: inline-block;
   vertical-align: top;
-  overflow: scroll;
   min-width: 320px;
-  max-height: 450px;
   border: 1px solid gray;
 }
 

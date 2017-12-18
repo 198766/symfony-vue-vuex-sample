@@ -18,8 +18,8 @@ const store = new Vuex.Store({
           status: 1
         },
         filterBox: [{
-            type: 'text',
-            value: 'label'
+          type: 'text',
+          value: 'label'
         }]
       },
       {
@@ -48,20 +48,20 @@ const store = new Vuex.Store({
       patient: []
     },
     activeTab: {
-        id: 'AZ',
-        name: 'sortation',
-        url: 'patient-list',
-        title: 'Patienten-Liste',
-        collection: 'patient',
-        icon: 'sort-alpha-asc',
-        group: false,
-        filter: {
-            status: 1
-        },
-        filterBox: [{
-            type: 'text',
-            value: 'label'
-        }]
+      id: 'AZ',
+      name: 'sortation',
+      url: 'patient-list',
+      title: 'Patienten-Liste',
+      collection: 'patient',
+      icon: 'sort-alpha-asc',
+      group: false,
+      filter: {
+        status: 1
+      },
+      filterBox: [{
+        type: 'text',
+        value: 'label'
+      }]
     },
     patientFiltered: [],
     cursor: {
@@ -74,10 +74,10 @@ const store = new Vuex.Store({
       return state.collections.patient;
     },
     navigation: state => {
-        return state.navigation;
+      return state.navigation;
     },
     activeTab: state => {
-        return state.activeTab;
+      return state.activeTab;
     },
     patientFiltered: state => {
       return state.patientFiltered;
@@ -97,13 +97,13 @@ const store = new Vuex.Store({
 
       if (filter && filter.status >= 0) {
         data = state.collections.patient.filter(patient => {
-          return patient.status == filter.status;
+          return patient.status === filter.status;
         });
       } else {
         data = state.collections.patient;
       }
 
-      state['patientFiltered']= data;
+      state['patientFiltered'] = data;
     }
   },
   actions: {
@@ -116,11 +116,11 @@ const store = new Vuex.Store({
         throw err;
       });
     },
-    filterPatient({ commit, dispatch }, params) {
+    filterPatient({ commit }, params) {
       commit('setActiveTab', params);
       commit('setPatientFiltered');
     },
-    initActiveTab({ commit, dispatch }) {
+    initActiveTab({ commit }) {
       const tab = Vue.localStorage.get('activeTab');
 
       if (tab) {
@@ -128,6 +128,6 @@ const store = new Vuex.Store({
       }
     }
   }
-})
+});
 
 export default store;
