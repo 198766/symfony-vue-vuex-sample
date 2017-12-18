@@ -31,6 +31,6 @@
 
 ## Additional information
 
-Local URL for testing: http://localhost:8080/
-
-You can change ports or other configuration in `docker-compose.yml` file
+* Local URL for testing: http://localhost:8080/
+* Demo URL for testing: https://symfony-vue.demo.umbrella-web.com/
+* You can change ports or other configuration in `docker-compose.yml` file
