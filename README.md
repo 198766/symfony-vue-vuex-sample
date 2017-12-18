@@ -4,7 +4,7 @@
 
 * [Docker](https://www.docker.com/)
 * [Docker Compose](https://docs.docker.com/compose/install/)
-* [Node.ss and npm](https://nodejs.org/en/)
+* [Node.js and npm](https://nodejs.org/en/)
 
 ## Local installation
 
