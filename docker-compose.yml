@@ -1,0 +1,37 @@
+version: '2'
+services:
+    # Database instance
+    db:
+        image: mysql
+        ports:
+            - "33066:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: symfony
+            MYSQL_USER: symfony
+            MYSQL_PASSWORD: symfony
+
+    # PHP 7.1 (application) instance
+    app:
+      build: ./app
+      depends_on:
+       - db
+      volumes:
+       - ./src/:/var/www/html/src/
+
+    # Web server instance
+    web-srv:
+      image: nginx
+      depends_on:
+       - app
+      ports:
+       - 8080:80
+      volumes:
+       - ./nginx/configs/conf.d/:/etc/nginx/conf.d/
+       - ./nginx/configs/nginx.conf:/etc/nginx/nginx.conf
+      volumes_from:
+       - app
+      environment:
+       APP_NAME: vuesmf
+
+

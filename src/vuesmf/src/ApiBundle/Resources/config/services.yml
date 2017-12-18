@@ -1,0 +1,3 @@
+services:
+    api.random_generator:
+        class: ApiBundle\Service\RandomGenerator
